@@ -10,10 +10,10 @@ class TranxBtns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 10.0,
+      spacing: 4.0,
       children: [
         CustomBtn(
-          icon: AppIcons.wallet.toIconLabel(null, 32, 32),
+          icon: AppIcons.wallet.toIconLabel(null, 28, 28),
           title: 'Wallet To',
           subtitle: 'Bank A/c',
         ).expanded(),
@@ -21,13 +21,13 @@ class TranxBtns extends StatelessWidget {
           icon: Icon(
             Icons.redeem_outlined,
             color: context.colorScheme.primary,
-            size: 24,
+            size: 20,
           ),
           title: 'Explore',
           subtitle: 'Rewards',
-        ).expanded(),
+        ),
         CustomBtn(
-          icon: AppIcons.announcement.toIconLabel(null, 32, 32),
+          icon: AppIcons.announcement.toIconLabel(null, 28, 28),
           title: 'Refer & Get',
           subtitle: '200',
         ).expanded(),

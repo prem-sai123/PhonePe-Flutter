@@ -78,27 +78,25 @@ class AppIcon {
   AppIcon(this.path);
 
   Widget toIconLabel([String? title, double width = 42, double height = 42]) =>
-      Expanded(
-        child: Column(
-          spacing: 4.0,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(16.0),
-              child: Image.asset(
-                path,
-                fit: BoxFit.fitHeight,
-                height: height,
-                width: width,
-              ),
+      Column(
+        spacing: 4.0,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16.0),
+            child: Image.asset(
+              path,
+              fit: BoxFit.fitHeight,
+              height: height,
+              width: width,
             ),
-            if (title != null)
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-          ],
-        ),
+          ),
+          if (title != null)
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+        ],
       );
 }

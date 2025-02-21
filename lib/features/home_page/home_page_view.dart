@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/features/widgets/bordered_text.dart';
-import 'package:flutter_app/features/widgets/section_card_widget.dart';
+import 'package:flutter_app/features/widgets/gridview_section.dart';
 import 'package:flutter_app/features/widgets/tranx_btns.dart';
 import 'package:flutter_app/styles/icons.dart';
 
@@ -34,34 +34,25 @@ class _TransferMoneySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Transfer Money',
-      child: Column(
-        spacing: 10.0,
+      additionalWidget: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 8.0,
-            children: [
-              AppIcons.toMobileNum.toIconLabel('To Mobile Number'),
-              AppIcons.toBankUPI.toIconLabel('To Bank/UPI\nID'),
-              AppIcons.toSelfAcc.toIconLabel('To Self Account'),
-              AppIcons.checkBalance.toIconLabel('Check Bank Balance'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              BorderedText(text: 'UPI Lite: Try Now'),
-              BorderedText(
-                leading: Icon(Icons.qr_code, size: 12),
-                text: 'UPI ID: XXXXXXX123@ybl',
-                trailing: Icon(Icons.chevron_right, size: 16),
-              ),
-            ],
+          BorderedText(text: 'UPI Lite: Try Now'),
+          BorderedText(
+            leading: Icon(Icons.qr_code, size: 12),
+            text: 'UPI ID: XXXXXXX123@ybl',
+            trailing: Icon(Icons.chevron_right, size: 16),
           ),
         ],
       ),
+      children: [
+        AppIcons.toMobileNum.toIconLabel('To Mobile Number'),
+        AppIcons.toBankUPI.toIconLabel('To Bank/UPI\nID'),
+        AppIcons.toSelfAcc.toIconLabel('To Self Account'),
+        AppIcons.checkBalance.toIconLabel('Check Bank Balance'),
+      ],
     );
   }
 }
@@ -71,19 +62,15 @@ class _RechargeAndBillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Recharge & Pay Bills',
       enableViewAll: true,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8.0,
-        children: [
-          AppIcons.mobileRecharge.toIconLabel('Mobile Recharge'),
-          AppIcons.loanRepayment.toIconLabel('Loan Repayment'),
-          AppIcons.creditCard.toIconLabel('Credit Card Payment'),
-          AppIcons.rent.toIconLabel('Rent'),
-        ],
-      ),
+      children: [
+        AppIcons.mobileRecharge.toIconLabel('Mobile Recharge'),
+        AppIcons.loanRepayment.toIconLabel('Loan Repayment'),
+        AppIcons.creditCard.toIconLabel('Credit Card Payment'),
+        AppIcons.rent.toIconLabel('Rent'),
+      ],
     );
   }
 }
@@ -93,19 +80,15 @@ class _LoanSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Loan',
       enableViewAll: true,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8.0,
-        children: [
-          AppIcons.creditScore.toIconLabel('Credit Score'),
-          AppIcons.goldLoan.toIconLabel('Gold Loan'),
-          AppIcons.mutualFund.toIconLabel('Mutual Fund Loan'),
-          AppIcons.carFront.toIconLabel('Car'),
-        ],
-      ),
+      children: [
+        AppIcons.creditScore.toIconLabel('Credit Score'),
+        AppIcons.goldLoan.toIconLabel('Gold Loan'),
+        AppIcons.mutualFund.toIconLabel('Mutual Fund Loan'),
+        AppIcons.carFront.toIconLabel('Car'),
+      ],
     );
   }
 }
@@ -115,19 +98,15 @@ class _InsurnaceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Insurance',
       enableViewAll: true,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8.0,
-        children: [
-          AppIcons.bikeLeft.toIconLabel('Bike'),
-          AppIcons.carLeft.toIconLabel('Car'),
-          AppIcons.healthIns.toIconLabel('Health'),
-          AppIcons.termLife.toIconLabel('Term Life'),
-        ],
-      ),
+      children: [
+        AppIcons.bikeLeft.toIconLabel('Bike'),
+        AppIcons.carLeft.toIconLabel('Car'),
+        AppIcons.healthIns.toIconLabel('Health'),
+        AppIcons.termLife.toIconLabel('Term Life'),
+      ],
     );
   }
 }
@@ -137,19 +116,15 @@ class _WealthSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Wealth',
       enableViewAll: true,
-      child: Row(
-        spacing: 10.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppIcons.bestSIPFunds.toIconLabel('Best SIP Funds'),
-          AppIcons.startWithHund.toIconLabel('Start with ₹100'),
-          AppIcons.largeCapFunds.toIconLabel('Large cap Funds'),
-          AppIcons.topPerfFunds.toIconLabel('Top Performing Funds'),
-        ],
-      ),
+      children: [
+        AppIcons.bestSIPFunds.toIconLabel('Best SIP Funds'),
+        AppIcons.startWithHund.toIconLabel('Start with ₹100'),
+        AppIcons.largeCapFunds.toIconLabel('Large cap Funds'),
+        AppIcons.topPerfFunds.toIconLabel('Top Performing Funds'),
+      ],
     );
   }
 }
@@ -159,19 +134,15 @@ class _TravelSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Travel',
       enableViewAll: true,
-      child: Row(
-        spacing: 10.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppIcons.aeroplane.toIconLabel('Flights'),
-          AppIcons.bus.toIconLabel('Bus'),
-          AppIcons.train.toIconLabel('Trains'),
-          AppIcons.hotel.toIconLabel('Hotel'),
-        ],
-      ),
+      children: [
+        AppIcons.aeroplane.toIconLabel('Flights'),
+        AppIcons.bus.toIconLabel('Bus'),
+        AppIcons.train.toIconLabel('Trains'),
+        AppIcons.hotel.toIconLabel('Hotel'),
+      ],
     );
   }
 }
@@ -181,19 +152,15 @@ class _TransitFoodSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Transit & Food',
       enableViewAll: true,
-      child: Row(
-        spacing: 10.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppIcons.buyFasTag.toIconLabel('Buy FASTag'),
-          AppIcons.metro.toIconLabel('Metro'),
-          AppIcons.rechargeFasTag.toIconLabel('Recharge FASTag'),
-          AppIcons.carAssurance.toIconLabel('Roadside Assistance'),
-        ],
-      ),
+      children: [
+        AppIcons.buyFasTag.toIconLabel('Buy FASTag'),
+        AppIcons.metro.toIconLabel('Metro'),
+        AppIcons.rechargeFasTag.toIconLabel('Recharge FASTag'),
+        AppIcons.carAssurance.toIconLabel('Roadside Assistance'),
+      ],
     );
   }
 }
@@ -203,19 +170,15 @@ class _PurchaseSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Purchases',
       enableViewAll: true,
-      child: Row(
-        spacing: 10.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppIcons.twentyFourGold.toIconLabel('Gold'),
-          AppIcons.goldSavings.toIconLabel('Daily Gold Savings'),
-          AppIcons.playstore.toIconLabel('Google Play'),
-          AppIcons.brandVouchers.toIconLabel('Brand Vouchers'),
-        ],
-      ),
+      children: [
+        AppIcons.twentyFourGold.toIconLabel('Gold'),
+        AppIcons.goldSavings.toIconLabel('Daily Gold Savings'),
+        AppIcons.playstore.toIconLabel('Google Play'),
+        AppIcons.brandVouchers.toIconLabel('Brand Vouchers'),
+      ],
     );
   }
 }
@@ -225,17 +188,14 @@ class _PhonePeAppsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Apps by PhonePe',
-      child: Row(
-        spacing: 10.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppIcons.shareMarket.toIconLabel('Share Market'),
-          AppIcons.phonepeBusiness.toIconLabel('Business'),
-          AppIcons.indus.toIconLabel('Indus'),
-        ],
-      ),
+      enableViewAll: true,
+      children: [
+        AppIcons.shareMarket.toIconLabel('Share Market'),
+        AppIcons.phonepeBusiness.toIconLabel('Business'),
+        AppIcons.indus.toIconLabel('Indus'),
+      ],
     );
   }
 }
@@ -245,32 +205,19 @@ class _SponsoredLinksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCardWidget(
+    return GridviewSection(
       title: 'Sponsored Links',
-      child: Column(
-        children: [
-          Row(
-            spacing: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppIcons.teluguMatrimony.toIconLabel('Telugu Matrimony'),
-              AppIcons.mobilla.toIconLabel('Mobilla'),
-              AppIcons.minimalist.toIconLabel('Minimalist'),
-              AppIcons.derma.toIconLabel('The Derma Co'),
-            ],
-          ),
-          Row(
-            spacing: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppIcons.kapiva.toIconLabel('Kapiva'),
-              AppIcons.acwo.toIconLabel('acwo'),
-              AppIcons.astrotalk.toIconLabel('Astrotalk'),
-              AppIcons.plum.toIconLabel('Plum'),
-            ],
-          ),
-        ],
-      ),
+      enableViewAll: true,
+      children: [
+        AppIcons.teluguMatrimony.toIconLabel('Telugu Matrimony'),
+        AppIcons.mobilla.toIconLabel('Mobilla'),
+        AppIcons.minimalist.toIconLabel('Minimalist'),
+        AppIcons.derma.toIconLabel('The Derma Co'),
+        AppIcons.kapiva.toIconLabel('Kapiva'),
+        AppIcons.acwo.toIconLabel('acwo'),
+        AppIcons.astrotalk.toIconLabel('Astrotalk'),
+        AppIcons.plum.toIconLabel('Plum'),
+      ],
     );
   }
 }
